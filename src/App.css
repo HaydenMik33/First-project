@@ -1,28 +1,50 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
+.background-whole-page{
+  padding: 0;
+  width: 100vw;
+  background-color:#556;
+  background-image: linear-gradient(30deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
+  linear-gradient(150deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
+  linear-gradient(30deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
+  linear-gradient(150deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
+  linear-gradient(60deg, #99a 25%, transparent 25.5%, transparent 75%, #99a 75%, #99a), 
+  linear-gradient(60deg, #99a 25%, transparent 25.5%, transparent 75%, #99a 75%, #99a);
+  background-size:80px 140px;
+  background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
   color: white;
+  text-align:center;
 }
 
-.App-title {
-  font-size: 1.5em;
+
+
+.AddMovie-container{
+ 
+    padding:25px;
+    display:inline-block;
+   
+   
+
+}
+.List-container{
+  color: darkgray;
+  padding:25px;
+  
+
+  
+
+}
+.container-body{
+  background-color:hsla(0, 0%, 0%, 0.7);
+   
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: stretch;
+    align-content: stretch;
 }
 
-.App-intro {
-  font-size: large;
-}
+.footer{
+  height: 300px;
+  background-color:hsla(0, 0%, 0%, 0.7);
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
 }

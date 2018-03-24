@@ -1,0 +1,37 @@
+.Header{
+    margin:70px 0;
+    padding:25px;
+    height: 250px;
+    width: 100vw;
+    color:white;
+    display:inline-block;
+    font-size:50px;
+    background-color:hsla(0, 0%, 0%, 0.7);
+    font-family: 'Russo One', sans-serif;
+    line-height: 180%;
+}
+.Header b{
+    color :red;
+    font-weight: normal;
+    font-size: 90px;
+    font-family:'Faster One', cursive;
+    -webkit-animation-name: example; 
+    -webkit-animation-duration:15s;
+    animation-name: example;
+    animation-duration: 15s;
+    background-color: turquoise;
+}
+
+@-webkit-keyframes example {
+    0%   {background-color: rgb(13, 233, 233);}
+    10%  {background-color: yellow;}
+    20%  {background-color: blue;}
+    30% {background-color: green;}
+    40%  {background-color: yellow;}
+    50%  {background-color: blue;}
+    60% {background-color: green;}
+    70%  {background-color: yellow;}
+    80%  {background-color: blue;}
+    90% {background-color: green;}
+    100% {background-color: rgb(52, 209, 230);}
+}
