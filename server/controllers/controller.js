@@ -28,14 +28,18 @@ module.exports ={
         const{ id } = req.params;
         const{ title , overview } =req.body;
         movies.forEach(movie=>{
-            movie.title = title;
+            {  
+                if(parseInt(id) === movie.id){
             movie.overview = overview;
+            movie.title = title;
+                }
+        }
         });
         res.status(200).json(movies);
     },
     deleteMovies:(req,res) =>{
        const {id} =req.params;
-       let index = movies.findIndex((movie)=>movie.id ===id);
+       let index = movies.findIndex((movie)=>movie.id === parseInt(id));
        movies.splice(index,1);
        res.status(200).json(movies);
     }

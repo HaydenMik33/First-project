@@ -9,6 +9,7 @@
     background-color:hsla(0, 0%, 0%, 0.7);
     font-family: 'Russo One', sans-serif;
     line-height: 180%;
+
 }
 .Header b{
     color :red;
@@ -20,6 +21,11 @@
     animation-name: example;
     animation-duration: 15s;
     background-color: turquoise;
+}
+.border-line{
+    border: royalblue solid;
+    margin:8px 40px;
+    margin-right: 60px;
 }
 
 @-webkit-keyframes example {

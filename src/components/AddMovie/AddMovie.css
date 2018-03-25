@@ -13,19 +13,18 @@
   background-color: hsla(0, 0%, 0%, 0.7);
   margin:25px;
   color: blanchedalmond;
+  
 }
 .bigContainer-for-AddMovie{
     margin-top: 25px;
-    width:300px;
-    padding:10px;
-    padding-bottom: 30px;
+    width:350px;
+    padding:25px;
+    padding-bottom: 40px;
     border-style:solid;
     border-color: royalblue;
-
-    
 }
 h1{
     font-family: Monoton;
-    font-size:25px;
+    font-size:35px;
     margin:25px;
 }

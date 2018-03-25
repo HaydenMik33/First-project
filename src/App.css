@@ -13,38 +13,53 @@
   color: white;
   text-align:center;
 }
-
-
-
 .AddMovie-container{
- 
     padding:25px;
     display:inline-block;
-   
-   
-
 }
+.search-big-box{
+  padding:45px;
+  display:inline-block;
+  border: royalblue solid; 
+}
+.search-big-box input{
+  border: blue;
+  border-style: solid;
+  background-color: hsla(0, 0%, 0%, 0.7);
+  margin:25px;
+  color: blanchedalmond;
+  padding:5px;
+}
+.search-big-box button{
+  display: block;
+  margin : 0 auto;
+}
+
 .List-container{
   color: darkgray;
   padding:25px;
-  
-
-  
-
+  margin-right:50px;
 }
-.container-body{
-  background-color:hsla(0, 0%, 0%, 0.7);
-   
+
+  .container-body{
+    background-color:hsla(0, 0%, 0%, 0.7);
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: space-around;
-    align-items: stretch;
+    justify-content: flex-start;
+    align-items: flex-start;
     align-content: stretch;
-}
+  }
 
 .footer{
   height: 300px;
   background-color:hsla(0, 0%, 0%, 0.7);
 
+}
+.left-contoller{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: flex-start;
 }

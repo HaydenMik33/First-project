@@ -2,11 +2,52 @@ h4{
     font-family:Monoton ;
     color: gainsboro;
     margin: 30px;
-    font-size: 35px;
+    font-size: 60px;
 }
 .outline-for-MBcontainer{
     border-style: solid;
     border-color: royalblue;
-    padding:25px;
+    padding:50px;
     margin:25px;
+}
+.flex-box-row{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+.overview-style{
+    width:450px;
+    padding:25px;
+    margin:40px;
+    text-align: left;
+}
+img{
+    margin:25px;
+    box-shadow: 8px 8px 10px rgb(60, 77, 100);
+}
+
+.edit-input{
+    border: blue;
+    border-style: solid;
+    background-color: hsla(0, 0%, 0%, 0.7);
+    margin:25px;
+    color: blanchedalmond;
+    padding:5px;
+}
+.edit-big-box{
+    padding:25px;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+    align-items: center;
+}
+.edit-big-box .confirm-button{
+    margin-left:20px;
+}
+.edit-big-box .overview-input{
+    height: 100px;
+    margin-right: 60px;
 }

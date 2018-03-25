@@ -22,14 +22,14 @@ class AddMovie extends Component{
 
  render(){
      const {title,overview} = this.state;
-     console.log(title,overview)
+    // console.log(title,overview)
      return (
          <div className="bigContainer-for-AddMovie">
-         <h1>Add one of your <br />fav </h1>
+         <h1>Add your <br />fav </h1>
              <input 
               type ="text"
                className="add-input"
-               placeholder="Movie-title"
+               placeholder="Movie title"
                value= {title}
                onChange = {
                    e=>
