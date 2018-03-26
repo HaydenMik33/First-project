@@ -24,8 +24,9 @@
 }
 .border-line{
     border: royalblue solid;
-    margin:8px 40px;
-    margin-right: 60px;
+    width:80vw;
+    margin:0 auto;
+    margin-right: 10vw;
 }
 
 @-webkit-keyframes example {

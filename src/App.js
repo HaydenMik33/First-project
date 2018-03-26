@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
 import axios from "axios";
+import logo from "./myFav.png";
 import AddMovie from "./components/AddMovie/AddMovie";
 import Listcon from './components/Listcon/Listcon';
 import Header from "./components/Header/Header";
 import SearchResult from "./components/Search/SearchResult";
+// import Share from "./components/Share/Share";
 class App extends Component {
   constructor() {
     super();
@@ -102,7 +104,6 @@ class App extends Component {
     return (
       
       <div className="background-whole-page"> 
-           
              <Header />
     <div className="container-body">
 
@@ -119,7 +120,9 @@ class App extends Component {
                         onChange={(e)=>this.setState({searchValue : e.target.value})}
                      /> 
                       <button onClick={this.searchForTheSame} className="btn btn-outline-primary">Search</button>
+                     
                 </div>
+                <img src={logo} className="App-logo" alt="logo" />
          </div>
 
              <div className="List-container">

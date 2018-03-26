@@ -3,17 +3,19 @@ import './Listcon.css';
 
 class Listcon extends Component{
     constructor(props){
-        super(props);
+        super();
         this.state={
             title: props.title,
             overview : props.overview,
             poster_path :props.poster_path,
             inputSwitch : true,
-            myf:()=>{console.log(props)}
+            myf:()=>{console.log(props)},
+            myWatchList:[]
         };
         this.handleConfirm = this.handleConfirm.bind(this);
         this.handleInputSwitch= this.handleInputSwitch.bind(this);
-    }
+        this.handleWatchList = this.handleWatchList.bind(this);  
+       }
     handleInputSwitch() {
         this.setState({
           inputSwitch: !this.state.inputSwitch
@@ -28,9 +30,16 @@ class Listcon extends Component{
           inputSwitch: !this.state.inputSwitch
         });
       }
-
-
+      handleWatchList(){
+         const {myWatchList,title,overview} =this.state;
+         var empty =[];
+         empty.push({title},{overview});
+         this.state({
+             myWatchList : empty
+         });
+        }
  render(){
+   console.log(this.state.myWatchList);
  //console.log(this.state.myf());
      const { deleteMovie,id } =this.props;
      const { inputSwitch,title,overview,poster_path } = this.state;
@@ -46,13 +55,16 @@ class Listcon extends Component{
             <img src={`http://image.tmdb.org/t/p/w200/${this.props.poster_path}`} alt="" />
                 </div>
            <div className ="button-box">
-                <button className="card-button" className="btn btn-outline-dark" onClick={this.handleInputSwitch}>
+                <button className="movie-button btn btn-outline-dark" onClick={this.handleInputSwitch}>
                     Edit
                 </button>
            
-                <button className="card-button" className="btn btn-outline-dark" onClick={() =>deleteMovie(id)}>
+                <button className="movie-button btn btn-outline-dark" onClick={() =>deleteMovie(id)}>
                       Delete
                  </button>
+                 <button className="movie-button btn btn-outline-warning" onClick={()=>this.handleWatchList}>
+                    Add to my Watch List
+                  </button>
             </div>
           </div>
             ):(

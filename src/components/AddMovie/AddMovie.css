@@ -15,13 +15,12 @@
   color: blanchedalmond;
   
 }
-.bigContainer-for-AddMovie{
-    margin-top: 25px;
-    width:350px;
-    padding:25px;
-    padding-bottom: 40px;
-    border-style:solid;
-    border-color: royalblue;
+.addMovie-flex-setting{
+    display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	align-content: stretch;
 }
 h1{
     font-family: Monoton;

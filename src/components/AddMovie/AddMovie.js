@@ -24,7 +24,7 @@ class AddMovie extends Component{
      const {title,overview} = this.state;
     // console.log(title,overview)
      return (
-         <div className="bigContainer-for-AddMovie">
+         <div className="addMovie-flex-setting">
          <h1>Add your <br />fav </h1>
              <input 
               type ="text"
