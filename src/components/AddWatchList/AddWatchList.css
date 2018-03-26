@@ -1,0 +1,11 @@
+.watch-list-style{
+    display:flex;
+    flex-direction: column;
+ 
+    background-color:hsla(0, 0%, 0%, 0.5);
+}
+.border-for-watchList{
+    border: royalblue solid;
+    margin:15px;
+    
+}

@@ -6,6 +6,7 @@ import AddMovie from "./components/AddMovie/AddMovie";
 import Listcon from './components/Listcon/Listcon';
 import Header from "./components/Header/Header";
 import SearchResult from "./components/Search/SearchResult";
+import AddWatchList from "./components/AddWatchList/AddWatchList";
 // import Share from "./components/Share/Share";
 class App extends Component {
   constructor() {
@@ -14,13 +15,15 @@ class App extends Component {
       movies: [],
       searchValue:"",
       resultMovie:[],
-      searchSwitch:false
+      searchSwitch:false,
+      myWatchList:[]
     };
     this.updateMovie = this.updateMovie.bind(this);
     this.deleteMovie = this.deleteMovie.bind(this);
     this.newMovie = this.newMovie.bind(this);
     this.searchForTheSame = this.searchForTheSame.bind(this);
-  }
+    this.addMovieToWatch = this.addMovieToWatch.bind(this);
+  } 
 
   componentDidMount(){
     axios.get("/api/movies").then(res =>{
@@ -54,6 +57,17 @@ class App extends Component {
       })
       .catch(console.log);
   }
+  addMovieToWatch(id,title,overview){
+    axios
+    .put(`/api/watchlist/${id}`, { title, overview })
+    .then(res => {
+     // console.log(res);
+      this.setState({
+        myWatchList: res.data
+      });
+    })
+    .catch(console.log);   
+  }
 
   newMovie(title, overview) {
     axios
@@ -82,8 +96,6 @@ class App extends Component {
     })
   //console.log(resultMovie);
   }
-    
-  
   render() {
     const {movies} = this.state;
     let myMovieList = movies.map((movie)=>{
@@ -96,6 +108,7 @@ class App extends Component {
           poster_path ={movie.poster_path}
           updateMovie={this.updateMovie}
           deleteMovie={this.deleteMovie}
+          addMovieToWatch= {this.addMovieToWatch}
         />
       )
     })
@@ -123,6 +136,8 @@ class App extends Component {
                      
                 </div>
                 <img src={logo} className="App-logo" alt="logo" />
+                <div className="Hayden"><AddWatchList  myWatchList={this.state.myWatchList}/>
+                </div>
          </div>
 
              <div className="List-container">

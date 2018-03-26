@@ -1,6 +1,7 @@
 const axios =require("axios");
 let movies =[];
 let newId = 50000;
+let myWatchList =[];
 module.exports ={
     getMovies :(req,res)=>{
         if (!movies.length) { 
@@ -42,5 +43,17 @@ module.exports ={
        let index = movies.findIndex((movie)=>movie.id === parseInt(id));
        movies.splice(index,1);
        res.status(200).json(movies);
+    },
+    addMoviesToWatch:(req,res) =>{
+       const { id } =req.params;
+       const { title,overview }=req.body;
+    //    console.log(req.body);
+       let index = movies.findIndex((movie)=>{
+        //    console.log(typeof parseInt(id), typeof parseInt(movie.id))
+           return parseInt(movie.id) === parseInt(id)
+       });
+       var movie = movies[index];
+       myWatchList.push({title:movie.title,overview:movie.overview});
+       res.status(200).json(myWatchList);
     }
 }

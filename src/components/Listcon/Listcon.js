@@ -9,12 +9,10 @@ class Listcon extends Component{
             overview : props.overview,
             poster_path :props.poster_path,
             inputSwitch : true,
-            myf:()=>{console.log(props)},
-            myWatchList:[]
+            myf:()=>{console.log(props)}
         };
         this.handleConfirm = this.handleConfirm.bind(this);
         this.handleInputSwitch= this.handleInputSwitch.bind(this);
-        this.handleWatchList = this.handleWatchList.bind(this);  
        }
     handleInputSwitch() {
         this.setState({
@@ -30,20 +28,13 @@ class Listcon extends Component{
           inputSwitch: !this.state.inputSwitch
         });
       }
-      handleWatchList(){
-         const {myWatchList,title,overview} =this.state;
-         var empty =[];
-         empty.push({title},{overview});
-         this.state({
-             myWatchList : empty
-         });
-        }
+  
  render(){
-   console.log(this.state.myWatchList);
+   //console.log(this.state.myWatchList);
  //console.log(this.state.myf());
-     const { deleteMovie,id } =this.props;
+     const { deleteMovie,addMovieToWatch,id } =this.props;
      const { inputSwitch,title,overview,poster_path } = this.state;
-     
+    // console.log(title);
      return (
 
          <div className="outline-for-MBcontainer">
@@ -62,7 +53,7 @@ class Listcon extends Component{
                 <button className="movie-button btn btn-outline-dark" onClick={() =>deleteMovie(id)}>
                       Delete
                  </button>
-                 <button className="movie-button btn btn-outline-warning" onClick={()=>this.handleWatchList}>
+                 <button className="movie-button btn btn-outline-warning" onClick={()=>addMovieToWatch(id,this.props.title,this.props.overview)}>
                     Add to my Watch List
                   </button>
             </div>

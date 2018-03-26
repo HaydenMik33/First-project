@@ -11,7 +11,7 @@ app.get("/api/movies",moviesCtrl.getMovies);
 app.post("/api/movies",moviesCtrl.postMovies);
 app.put("/api/movies/:id",moviesCtrl.updateMovies);
 app.delete("/api/movies/:id",moviesCtrl.deleteMovies);
-
+app.put("/api/watchlist/:id",moviesCtrl.addMoviesToWatch);
 
 const port =3001;
 
