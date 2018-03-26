@@ -5,14 +5,13 @@ import AddMovie from "./components/AddMovie/AddMovie";
 import Listcon from './components/Listcon/Listcon';
 import Header from "./components/Header/Header";
 import SearchResult from "./components/Search/SearchResult";
-
 class App extends Component {
   constructor() {
     super();
     this.state = {
       movies: [],
       searchValue:"",
-      resultMovie:{},
+      resultMovie:[],
       searchSwitch:false
     };
     this.updateMovie = this.updateMovie.bind(this);
@@ -67,19 +66,20 @@ class App extends Component {
   }
   searchForTheSame(){
     const{movies,searchValue,resultMovie} = this.state;
-    console.log(movies);  //movies is an array of objs
+    var empty =[];
     movies.forEach(movie=>{
-      if(movie.title === searchValue){
-          this.setState({
-            searchSwitch:!this.state.searchSwitch,
-            resultMovie:movie
-          })
-      }
-      else{
-        this.setState({searchSwitch: this.state.searchSwitch})
+      //movies is an array of objs
+      if(movie.title.toLowerCase().includes(searchValue.toLowerCase())){
+        // console.log(movie.title) 
+        empty.push(movie);
+        this.setState({
+          searchSwitch:!this.state.searchSwitch,
+          resultMovie: empty
+        })
       }
     })
-   }
+  //console.log(resultMovie);
+  }
     
   
   render() {
@@ -97,11 +97,12 @@ class App extends Component {
         />
       )
     })
-    console.log(this.state.searchValue);
-   
+    //console.log(this.state.searchValue);
+  // console.log(this.state.resultMovie)
     return (
       
-      <div className="background-whole-page">       
+      <div className="background-whole-page"> 
+           
              <Header />
     <div className="container-body">
 
@@ -122,7 +123,7 @@ class App extends Component {
          </div>
 
              <div className="List-container">
-               {this.state.searchSwith ?(
+               {this.state.searchSwitch ?(
                  <SearchResult resultMovie ={this.state.resultMovie}/>
                ):(
                  <div>

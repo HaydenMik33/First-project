@@ -1,0 +1,18 @@
+.flex-box-result{
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+.overview-search-style{
+    width:450px;
+    padding:25px;
+    margin:40px;
+    text-align: left;
+}
+.big-box-search-result{
+    border: royalblue solid;
+    margin:25px;
+    margin-bottom:50px;
+}
